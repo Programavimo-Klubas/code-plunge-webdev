@@ -19,9 +19,11 @@ function App() {
 
   return (
 	  <div>
-		  <Day title="Pirmadienis" temperature={10} />
-		  <Day title="Antradienis" temperature={11} />
-		  <Day title="Treciadienis" temperature={12} />
+		  {daysState.map(function (day) {
+			  return (
+			<Day key={day.title} title={day.title} temperature={day.temp} />
+			  )
+		  })}
 	  </div>
   )
 }
