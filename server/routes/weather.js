@@ -22,4 +22,18 @@ router.get("/", function(request, response) {
 	response.send(JSON.stringify(days));
 });
 
+const dayTemperature = {
+	Pirmadienis: [10, 11, 12, 11, 10],
+	Antradienis: [9, 10, 10, 9, 8],
+	Treciadienis: [],
+};
+
+router.get("/:day", function(request, response) {
+	const day = request.params.day;
+	const temperature = dayTemperature[day];
+
+	response.setHeader("Content-type", "application/json");
+	response.send(JSON.stringify(temperature));
+});
+
 module.exports = router;
