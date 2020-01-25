@@ -4,10 +4,15 @@ import './App.css';
 import Day from "./day"
 
 function App() {
-	useEffect(async function () {
+
+	async function getDays() {
 		const daysText = await fetch("http://localhost:3000/weather");
 		const days = await daysText.json();
 		console.log("days", days);
+	}
+
+	useEffect(function() {
+		getDays();
 	});
 
   return (
