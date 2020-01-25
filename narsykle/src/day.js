@@ -1,8 +1,11 @@
 import React from "react"
 
-function Day() {
+function Day(props) {
+	const title = props.title;
+	const temperature = props.temperature;
+
 	return <div>
-		Pirmadienis - 12
+		{title} - {temperature}
 	</div>
 }
 
